@@ -95,6 +95,16 @@ class Client implements ClientInterface
     protected $options;
 
     /**
+     * @var string
+     */
+    protected $phantomJsPath;
+
+    /**
+     * @var string
+     */
+    protected $phantomJsLoaderPath;
+
+    /**
      * Internal constructor
      *
      * @access public
@@ -211,6 +221,28 @@ class Client implements ClientInterface
     }
 
     /**
+     * @param $value
+     * @return $this
+     */
+    public function setPhantomJsPath($value)
+    {
+        $this->phantomJsPath = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param $value
+     * @return $this
+     */
+    public function setPhantomLoaderPath($value)
+    {
+        $this->phantomJsLoaderPath = $value;
+
+        return $this;
+    }
+
+    /**
      * Get bin directory.
      *
      * @access public
@@ -245,7 +277,10 @@ class Client implements ClientInterface
      */
     public function getPhantomJs()
     {
-        return sprintf($this->phantomJs, $this->getBinDir());
+        return $this->phantomJsPath === null
+            ? sprintf($this->phantomJs, $this->getBinDir())
+            : $this->phantomJsPath
+        ;
     }
 
     /**
@@ -272,7 +307,10 @@ class Client implements ClientInterface
      */
     public function getPhantomLoader()
     {
-        return sprintf($this->phantomLoader, $this->getBinDir());
+        return $this->phantomJsLoaderPath === null
+            ? sprintf($this->phantomLoader, $this->getBinDir())
+            : $this->phantomJsLoaderPath
+        ;
     }
 
     /**
