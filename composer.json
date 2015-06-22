@@ -1,10 +1,9 @@
 {
-    "name": "ibenhalib/php-phantomjs",
+    "name": "jonnnnyw/php-phantomjs",
     "description": "A PHP wrapper for loading pages through PhantomJS",
     "keywords": ["PhantomJS", "Testing", "Headless Browser"],
 	"type": "library",
     "license": "MIT",
-    "version": "dev-add-config",
     "authors": [
         {
             "name": "Jonny Wenmoth",
