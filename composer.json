@@ -4,7 +4,7 @@
     "keywords": ["PhantomJS", "Testing", "Headless Browser"],
 	"type": "library",
     "license": "MIT",
-    "version": "dev-add_config",
+    "version": "dev-add-config",
     "authors": [
         {
             "name": "Jonny Wenmoth",
